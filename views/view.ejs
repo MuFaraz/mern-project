@@ -1,0 +1,27 @@
+<%- include('includes/header'); -%>
+
+    <h1>All product</h1>
+    <!-- <select name="filter">
+        <option value="10" > Less than 10</option>
+        <option value="20" > Greater than 10</option>
+    </select> -->
+    
+    <table id="customers">
+        <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        <% product.forEach(function(pr){ %>
+            <tr>
+                <td><%= pr.name %></td>
+                <td><%= pr.price %></td>
+                <td> <a href="/edit/<%=pr._id%>" class="edit" data-toggle="modal">Edit</a>
+                    <a href="/delete/<%=pr._id%>" class="delete">Delete</i></a>
+                </td>
+            </tr>
+        <% }); %>
+        
+        
+    </table>
+    <%- include('includes/footer'); -%>
